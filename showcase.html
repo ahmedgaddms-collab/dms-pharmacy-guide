@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title id="tab-title">DMS Interactive Showcase</title>
+
+    <!-- أيقونة التبويب العلوية (Favicon) -->
+    <link rel="icon" type="image/png" href="dms-silver-logo.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #6a348c;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 16px;
+            color: #ffffff;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* العلامة المائية لشعار DMS على جانبي الشاشة */
+        .bg-watermark {
+            position: fixed;
+            width: 520px;
+            height: 520px;
+            pointer-events: none;
+            opacity: 0.12;
+            filter: grayscale(100%) brightness(200%);
+            z-index: 0;
+            user-select: none;
+        }
+
+        .bg-watermark.left {
+            top: 15%;
+            left: -160px;
+            transform: rotate(-15deg);
+        }
+
+        .bg-watermark.right {
+            bottom: 10%;
+            right: -160px;
+            transform: rotate(20deg);
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 960px;
+            text-align: center;
+            z-index: 2;
+            margin-bottom: 20px;
+        }
+
+        .main-title {
+            color: #ffffff;
+            font-size: clamp(1.15rem, 4.2vw, 1.85rem);
+            font-weight: 900;
+            line-height: 1.45;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            padding: 0 8px;
+        }
+
+        .showcase-area {
+            flex: 1;
+            width: 100%;
+            max-width: 960px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        /* فريم الفيديو التفاعلي */
+        .custom-video-frame {
+            width: 100%;
+            background: #10081a;
+            border-radius: 18px;
+            padding: 12px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .frame-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2px 8px 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .window-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        .frame-label {
+            font-size: 0.78rem;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .video-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000000;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-box video, .video-box iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            object-fit: contain;
+        }
+
+        /* فريم المستندات والصور مع التكبير */
+        .custom-image-frame {
+            width: 100%;
+            background: rgba(18, 10, 28, 0.9);
+            backdrop-filter: blur(14px);
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .image-toolbar {
+            height: 48px;
+            background: rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .toolbar-text {
+            font-size: 0.82rem;
+            color: #4ade80;
+            font-weight: 700;
+        }
+
+        .toolbar-btns {
+            display: flex;
+            gap: 6px;
+        }
+
+        .zoom-btn {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            border: none;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 700;
+        }
+
+        .zoom-btn:hover {
+            background: #4ade80;
+            color: #0f172a;
+        }
+
+        .image-canvas {
+            width: 100%;
+            min-height: 450px;
+            max-height: 75vh;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0510;
+            padding: 16px;
+        }
+
+        .image-canvas img {
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.15s ease-out;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .footer-nav {
+            margin-top: 22px;
+            z-index: 2;
+        }
+
+        .btn-back {
+            background: rgba(255, 255, 255, 0.14);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 24px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            transition: background 0.2s;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-back:hover {
+            background: #ffffff;
+            color: #6a348c;
+        }
+
+        @media screen and (max-width: 768px) {
+            body { padding: 16px 10px 25px; }
+            .bg-watermark { width: 300px; height: 300px; }
+            .custom-video-frame { padding: 8px; border-radius: 14px; }
+            .image-canvas { min-height: 360px; max-height: 60vh; padding: 6px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الشعار المائي في الخلفية -->
+    <img src="dms-silver-logo.png" class="bg-watermark left" alt="Watermark Left">
+    <img src="dms-silver-logo.png" class="bg-watermark right" alt="Watermark Right">
+
+    <div class="header-container">
+        <h1 class="main-title" id="page-title">جاري تحميل المحتوى...</h1>
+    </div>
+
+    <div class="showcase-area" id="showcase-area"></div>
+
+    <div class="footer-nav">
+        <a href="index.html" onclick="if(window.history.length > 1){ window.history.back(); return false; }" class="btn-back">← العودة لدليل النظام</a>
+    </div>
+
+    <script>
+        // قاعدة البيانات مدمجة مباشرة لكل خطوات الدليل (فيديوهات + صور)
+        // ملاحظة: لو الفيديو مرفوع على Google Drive غير type إلى "drive_video" وضع رابط /preview
+        const items = {
+            // ==================== DAILY ====================
+            "daily-1": {
+                "title": "DAILY: البحث برقم الكارنيه (Card ID) وظهور بيانات المريض و تعليمات الصرف تلقائياً",
+                "type": "video",
+                "src": "page3.mp4"
+            },
+            "daily-1-img": {
+                "title": "DAILY: شاشة البحث برقم الكارنيه (Card ID)",
+                "type": "image",
+                "src": "page3.png"
+            },
+            "daily-2": {
+                "title": "DAILY: إدخال بيانات المطالبة والروشتة (Claim Info)",
+                "type": "video",
+                "src": "page4.mp4"
+            },
+            "daily-2-img": {
+                "title": "DAILY: شاشة إدخال بيانات المطالبة والروشتة",
+                "type": "image",
+                "src": "page4.png"
+            },
+            "daily-3": {
+                "title": "DAILY: اختيار الأدوية وإضافة الأصناف الدوائية",
+                "type": "video",
+                "src": "page5.mp4"
+            },
+            "daily-3-img": {
+                "title": "DAILY: شاشة اختيار الأدوية",
+                "type": "image",
+                "src": "page5.png"
+            },
+            "daily-4": {
+                "title": "DAILY: إدخال تفاصيل الاستخدام والجرعة (Dose & Duration)",
+                "type": "video",
+                "src": "page6.mp4"
+            },
+            "daily-4-img": {
+                "title": "DAILY: شاشة تفاصيل الاستخدام والجرعة",
+                "type": "image",
+                "src": "page6.png"
+            },
+            "daily-5": {
+                "title": "DAILY: التعامل مع الأصناف التي تتطلب موافقة (Pending)",
+                "type": "video",
+                "src": "page7.mp4"
+            },
+            "daily-5-img": {
+                "title": "DAILY: تنبيه الموافقة الطبية (Requires Approval)",
+                "type": "image",
+                "src": "page7.png"
+            },
+            "daily-6": {
+                "title": "DAILY: حفظ وطباعة الأدوية المصروفة (Dispense & Print)",
+                "type": "video",
+                "src": "page8.mp4"
+            },
+            "daily-6-img": {
+                "title": "DAILY: شاشة الحفظ والطباعة (Dispense & Print)",
+                "type": "image",
+                "src": "page8.png"
+            },
+            "daily-7": {
+                "title": "DAILY: متابعة إشعارات الجرس والرد الطبي (Medical Reply)",
+                "type": "video",
+                "src": "page9.mp4"
+            },
+            "daily-7-img": {
+                "title": "DAILY: شاشة إشعارات الجرس والرد الطبي",
+                "type": "image",
+                "src": "page9.png"
+            },
+
+            // ==================== CHRONIC ====================
+            "chronic-1": {
+                "title": "CHRONIC: الدخول إلى قائمة العلاج الشهري المزمن",
+                "type": "video",
+                "src": "page10.mp4"
+            },
+            "chronic-1-img": {
+                "title": "CHRONIC: رسالة تنبيه العلاج الشهري",
+                "type": "image",
+                "src": "page10.png"
+            },
+            "chronic-2": {
+                "title": "CHRONIC: تحديد وصرف أدوية العلاج الشهري (Dispense / All)",
+                "type": "video",
+                "src": "page10.mp4"
+            },
+            "chronic-2-img": {
+                "title": "CHRONIC: شاشة تحديد وصرف الأصناف",
+                "type": "image",
+                "src": "page11.png"
+            },
+            "chronic-3": {
+                "title": "CHRONIC: تعديل سعر العبوة وإعادة طباعة الموافقة",
+                "type": "video",
+                "src": "page12.mp4"
+            },
+            "chronic-3-img": {
+                "title": "CHRONIC: شاشة تعديل سعر الدواء",
+                "type": "image",
+                "src": "page12.png"
+            },
+
+            // ==================== DOCTOR ====================
+            "doctor-1": {
+                "title": "DOCTOR: الدخول إلى شاشة موافقات الأطباء",
+                "type": "video",
+                "src": "page13.mp4"
+            },
+            "doctor-1-img": {
+                "title": "DOCTOR: رسالة تنبيه الأدوية المسجلة في شاشة Doctor",
+                "type": "image",
+                "src": "page13.png"
+            },
+            "doctor-2": {
+                "title": "DOCTOR: استعراض واختيار الموافقة (Click to select Approval)",
+                "type": "video",
+                "src": "page13.mp4"
+            },
+            "doctor-2-img": {
+                "title": "DOCTOR: شاشة اختيار الموافقة",
+                "type": "image",
+                "src": "page14.png"
+            },
+            "doctor-3": {
+                "title": "DOCTOR: تأكيد رقم الموافقة المطلوبة",
+                "type": "video",
+                "src": "page13.mp4"
+            },
+            "doctor-3-img": {
+                "title": "DOCTOR: نافذة تأكيد رقم الموافقة",
+                "type": "image",
+                "src": "page15.png"
+            },
+            "doctor-4": {
+                "title": "DOCTOR: صرف وحفظ الأدوية (+Dispense & Save)",
+                "type": "video",
+                "src": "page13.mp4"
+            },
+            "doctor-4-img": {
+                "title": "DOCTOR: شاشة صرف وحفظ الأدوية",
+                "type": "image",
+                "src": "page16.png"
+            },
+
+            // ==================== SPECIAL CASES ====================
+            "special-1": {
+                "title": "Special Cases: صرف كمية أقل (Lower Quantity)",
+                "type": "video",
+                "src": "page18.mp4"
+            },
+            "special-1-img": {
+                "title": "Special Cases: شاشة تعديل الكمية المصروفة (Lower Quantity)",
+                "type": "image",
+                "src": "page18.png"
+            },
+            "special-2": {
+                "title": "Special Cases: تعديل السعر في العلاج الشهري أو Doctor",
+                "type": "video",
+                "src": "page19.mp4"
+            },
+            "special-2-img": {
+                "title": "Special Cases: شاشة تعديل السعر (Chronic / Doctor)",
+                "type": "image",
+                "src": "page19.png"
+            },
+            "special-3": {
+                "title": "Special Cases: تعديل السعر في موافقات Daily",
+                "type": "video",
+                "src": "page20.mp4"
+            },
+            "special-3-img": {
+                "title": "Special Cases: شاشة تعديل السعر في جدول Daily",
+                "type": "image",
+                "src": "page20.png"
+            },
+            "special-4": {
+                "title": "Special Cases: تنبيه وجود موافقة استثنائية (Exception)",
+                "type": "video",
+                "src": "page21.mp4"
+            },
+            "special-4-img": {
+                "title": "Special Cases: رسالة تنبيه الموافقة الاستثنائية",
+                "type": "image",
+                "src": "page21.png"
+            },
+            "special-5": {
+                "title": "Special Cases: تفعيل الاستثناء عبر زر Has Approval",
+                "type": "video",
+                "src": "page22.mp4"
+            },
+            "special-5-img": {
+                "title": "Special Cases: شاشة تفعيل Has Approval",
+                "type": "image",
+                "src": "page22.png"
+            },
+            "special-6": {
+                "title": "Special Cases: التحقق من تفاصيل الاستثناء في خانة Permission",
+                "type": "video",
+                "src": "page23.mp4"
+            },
+            "special-6-img": {
+                "title": "Special Cases: شاشة التحقق من خانة Permission",
+                "type": "image",
+                "src": "page23.png"
+            },
+            "special-7": {
+                "title": "Special Cases: مسح رمز QR Code لرفع النموذج إلكترونياً",
+                "type": "video",
+                "src": "page24.mp4"
+            },
+            "special-7-img": {
+                "title": "Special Cases: نموذج مسح رمز QR Code",
+                "type": "image",
+                "src": "page24.png"
+            },
+            "special-8": {
+                "title": "Special Cases: تصوير وحفظ صورة النموذج (Upload Prescription)",
+                "type": "video",
+                "src": "page25.mp4"
+            },
+            "special-8-img": {
+                "title": "Special Cases: شاشة رفع وحفظ صورة النموذج",
+                "type": "image",
+                "src": "page25.png"
+            },
+            "special-9": {
+                "title": "Special Cases: تنزيل صورة النموذج إلكترونياً (Download Prescription)",
+                "type": "video",
+                "src": "page26.mp4"
+            },
+            "special-9-img": {
+                "title": "Special Cases: شاشة تحميل صورة النموذج المرفوعة",
+                "type": "image",
+                "src": "page26.png"
+            },
+            "special-10": {
+                "title": "Special Cases: تعديل أو حذف الموافقة من صفحة Claims",
+                "type": "video",
+                "src": "page27.mp4"
+            },
+            "special-10-img": {
+                "title": "Special Cases: شاشة إدارة الموافقات (Edit / Delete)",
+                "type": "image",
+                "src": "page27.png"
+            },
+            "special-11": {
+                "title": "Special Cases: تسجيل الأصناف المعلقة (Pending)",
+                "type": "video",
+                "src": "page28.mp4"
+            },
+            "special-11-img": {
+                "title": "Special Cases: نافذة تحديد حالة Pending",
+                "type": "image",
+                "src": "page28.png"
+            },
+            "special-12": {
+                "title": "Special Cases: متابعة Pending عبر إشعارات الجرس",
+                "type": "video",
+                "src": "page29.mp4"
+            },
+            "special-12-img": {
+                "title": "Special Cases: شاشة متابعة Pending عبر الإشعارات",
+                "type": "image",
+                "src": "page29.png"
+            },
+            "special-13": {
+                "title": "Special Cases: متابعة Pending عبر تبويب Pending أعلى الشاشة",
+                "type": "video",
+                "src": "page30.mp4"
+            },
+            "special-13-img": {
+                "title": "Special Cases: شاشة البحث في تبويب Pending",
+                "type": "image",
+                "src": "page30.png"
+            }
+        };
+
+        function renderPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id') || "daily-1";
+            const item = items[id] || items["daily-1"];
+
+            document.getElementById('page-title').textContent = item.title;
+            document.getElementById('tab-title').textContent = item.title;
+
+            const container = document.getElementById('showcase-area');
+
+            if (item.type === "video") {
+                container.innerHTML = `
+                    <div class="custom-video-frame">
+                        <div class="frame-header">
+                            <div class="window-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <span class="frame-label">DMS Interactive Video Player</span>
+                        </div>
+                        <div class="video-box">
+                            <video controls autoplay playsinline preload="auto" src="${item.src}">
+                                المتصفح لا يدعم هذا الفيديو.
+                            </video>
+                        </div>
+                    </div>
+                `;
+            } else if (item.type === "drive_video") {
+                container.innerHTML = `
+                    <div class="custom-video-frame">
+                        <div class="frame-header">
+                            <div class="window-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <span class="frame-label">DMS Drive Streaming Player</span>
+                        </div>
+                        <div class="video-box">
+                            <iframe src="${item.src}" allow="autoplay; fullscreen"></iframe>
+                        </div>
+                    </div>
+                `;
+            } else if (item.type === "image") {
+                container.innerHTML = `
+                    <div class="custom-image-frame">
+                        <div class="image-toolbar">
+                            <span class="toolbar-text">معاينة الشاشة التوضيحية</span>
+                            <div class="toolbar-btns">
+                                <button class="zoom-btn" id="zin">تكبير (+)</button>
+                                <button class="zoom-btn" id="zout">تصغير (-)</button>
+                                <button class="zoom-btn" id="zreset">إعادة ضبط</button>
+                            </div>
+                        </div>
+                        <div class="image-canvas" id="canvas">
+                            <img id="zoom-img" src="${item.src}" alt="${item.title}">
+                        </div>
+                    </div>
+                `;
+
+                const img = document.getElementById('zoom-img');
+                let scale = 1;
+                document.getElementById('zin').onclick = () => { scale = Math.min(scale + 0.35, 3.5); img.style.transform = `scale(${scale})`; };
+                document.getElementById('zout').onclick = () => { scale = Math.max(scale - 0.35, 0.7); img.style.transform = `scale(${scale})`; };
+                document.getElementById('zreset').onclick = () => { scale = 1; img.style.transform = `scale(1)`; };
+            }
+        }
+
+        window.onload = renderPage;
+    </script>
+</body>
+</html>

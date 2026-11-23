@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMS - دليل النظام الجديد لصرف الأدوية</title>
+    <link rel="icon" type="image/png" href="dms-silver-logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="bg-icons"></div>
+
+<section class="slide cover-slide">
+        <div>
+            <img class="cover-logo" src="dms-silver-logo.png" alt="DMS Logo">
+            <h1 class="cover-title" dir="ltr">A New System Interface<br>Better Support and Easier Medication Dispensing</h1>
+            <p class="cover-subtitle">دليل الصيدليات الشامل لاستخدام نظام الصرف الإلكتروني (Online System)</p>
+        </div>
+    </section>
+<section class="slide">
+        <div class="slide-header">
+            <img class="company-logo" src="dms-silver-logo.png" alt="DMS Logo">
+            <div class="slide-title" dir="ltr">Why We Did This?</div>
+        </div>
+
+        <div class="slide-body why-body">
+            <div class="why-points">
+                <div class="flow-step">
+                    <div class="step-num">✓</div>
+                    <div class="step-detail">
+                        <strong>تسهيل المراجعة الطبية وتقليل الأخطاء</strong>
+                        <p>إرفاق صور النماذج والروشتات مباشرة يضمن مطابقة البيانات المدخلة مع المستند الأصلي، مما يمنع احتساب أخطاء لحضرتكم، حيث يوضح الـ Print Out إرفاق صورة النموذج ومراجعتها بنجاح من قِبل إدارة الصيدليات.</p>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-num">⏳</div>
+                    <div class="step-detail">
+                        <strong>تسريع دورة العمل (Workflow Speedup)</strong>
+                        <p>بدلاً من الطرق المنفصلة، أصبح بإمكان حضرتكم تحديد نوع النموذج ورفع الصورة — وفي حال وجود فحوصات طبية مع العميل — في خطوة واحدة متسلسلة لضمان سرعة الرد على حضرتكم.</p>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-num">💡</div>
+                    <div class="step-detail">
+                        <strong>هل أصبح على حضرتكم خطوات إضافية؟</strong>
+                        <p>تم مراعاة تصميم الواجهة بشكل سهل الاستخدام وبدون خطوات إضافية معقدة لضمان استفادتكم من الميزة الجديدة بسلاسة تامة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-visual">
+                <div class="thinking-card">
+                    <img src="thinking.png" alt="Thinking Character" class="thinking-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span class="footer-page">Page 1</span>
+            <a href="#" class="footer-link">DMS Technical &amp; Provider Support</a>
+        </div>
+    </section>
+<section class="slide">
+        <div class="slide-header">
+            <img class="company-logo" src="dms-silver-logo.png" alt="DMS Logo">
+            <div class="slide-title" dir="ltr">Types of Client Approvals</div>
+        </div>
+
+        <div class="slide-body cards-grid-body">
+            <div class="approval-type-card">
+                <div class="type-badge daily-badge" dir="ltr">DAILY</div>
+                <h3>الصرف اليومي (Daily)</h3>
+                <p>يُستخدم لصرف الروشتات اليومية أو نماذج الكشف العادية بعد إدخال بيانات المطالبة والتشخيص.</p>
+                <div class="requirement-box required">
+                    <strong>✓ يلزم استلام النموذج من العميل أو روشتة طبية خارجية</strong>
+                </div>
+            </div>
+
+            <div class="approval-type-card">
+                <div class="type-badge chronic-badge" dir="ltr">CHRONIC</div>
+                <h3>العلاج الشهري (Chronic)</h3>
+                <p>يُستخدم لصرف الأدوية الشهرية المزمنة المسجلة مسبقاً على حساب العميل في شاشة Chronic.</p>
+                <div class="requirement-box optional">
+                    <strong>✕ لا يلزم استلام النموذج من العميل أو روشتة طبية خارجية</strong>
+                </div>
+            </div>
+
+            <div class="approval-type-card">
+                <div class="type-badge doctor-badge" dir="ltr">DOCTOR</div>
+                <h3>موافقات الأطباء (Doctor)</h3>
+                <p>يُستخدم لصرف الأدوية المسجلة مسبقاً بموافقة طبية إلكترونية في شاشة Doctor.</p>
+                <div class="requirement-box optional">
+                    <strong>✕ لا يلزم استلام النموذج من العميل أو روشتة طبية خارجية</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span class="footer-page">Page 2</span>
+            <a href="#" class="footer-link">DMS Technical &amp; Provider Support</a>
+        </div>
+    </section>
+<section class="slide">
+        <div class="slide-header">
+            <img class="company-logo" src="dms-silver-logo.png" alt="DMS Logo">
+            <div class="slide-title">DAILY - البحث عن بيانات العميل</div>
+        </div>
+
+        <div class="slide-body showcase-body">
+            <div class="showcase-info">
+                <div>
+                    <div class="info-header">
+                        <span class="company-pill dms-pill" dir="ltr">DAILY • Step 1</span>
+                        <h3>البحث برقم الكارنيه</h3>
+                    </div>
+                    <div class="showcase-steps">
+                        <div class="flow-step">
+                            <div class="step-num">1</div>
+                            <div class="step-detail">
+                                <strong>إدخال رقم الكارنيه (Card ID)</strong>
+                                <p>يرجى إدخال رقم كارنيه المريض في خانة Search، مع مراعاة الاحتفاظ بأي علامات شرطة (-) أو حروف إنجليزية (إن وجدت) ضمن رقم الـ ID، ثم الضغط على زر <strong dir="ltr">Search</strong> (بحث).</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">2</div>
+                            <div class="step-detail">
+                                <strong>ظهور البيانات تلقائياً</strong>
+                                <p>ستظهر تلقائياً: اسم الموظف، تاريخ بداية وانتهاء التعاقد، ونسبة تحمل الشركة و تعليمات الصرف للمريض فى خانة instructions , وفي حال وجود استثناء بالصرف سيظهر في خانة <strong dir="ltr">Permission</strong>، بانتظار تفعيل حضرتكم للاستثناء عن طريق الضغط على خانة <strong dir="ltr">Permission</strong> المتواجدة بجوار زر <strong dir="ltr">Search</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-cta-box no-print">
+                    <a href="showcase.html?id=daily-1" class="watch-video-cta">
+                        <span>▶</span>
+                        <span>Click to watch video</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="showcase-frame-container">
+                <div class="browser-mockup">
+                    <div class="browser-top-bar">
+                        <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <div class="browser-url">portal.dms-eg.com/Pharmacies/Daily</div>
+                    </div>
+                    <a href="showcase.html?id=daily-1-img" class="screen-image-link">
+                        <div class="screen-image-wrapper">
+                            <img src="page3.png" alt="البحث برقم الكارنيه">
+                            <div class="screen-zoom-hint">Click to open full screen preview</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span class="footer-page">Page 3</span>
+            <a href="#" class="footer-link">DMS Technical &amp; Provider Support</a>
+        </div>
+    </section>
+<section class="slide">
+        <div class="slide-header">
+            <img class="company-logo" src="dms-silver-logo.png" alt="DMS Logo">
+            <div class="slide-title">DAILY - إدخال بيانات الروشتة</div>
+        </div>
+
+        <div class="slide-body showcase-body">
+            <div class="showcase-info">
+                <div>
+                    <div class="info-header">
+                        <span class="company-pill dms-pill" dir="ltr">DAILY • Step 2</span>
+                        <h3>بيانات المطالبة والروشتة</h3>
+                    </div>
+                    <div class="showcase-steps">
+                        <div class="flow-step">
+                            <div class="step-num">1</div>
+                            <div class="step-detail">
+                                <strong>رقم المطالبة والتليفون</strong>
+                                <p>أدخل <strong dir="ltr">Claim Number</strong> الموجود على الروشتة ورقم التليفون <strong dir="ltr">Phone Number</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">2</div>
+                            <div class="step-detail">
+                                <strong>التخصص، التشخيص، والتاريخ</strong>
+                                <p>حدد التخصص <strong dir="ltr">Specialty</strong>، التشخيص <strong dir="ltr">Diagnose</strong>، وتاريخ الروشتة <strong dir="ltr">Prescription Date</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">3</div>
+                            <div class="step-detail">
+                                <strong>تحديد نوع الصرف</strong>
+                                <p>من خانة <strong dir="ltr">Type</strong> يتم اختيار <strong dir="ltr">Daily</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">4</div>
+                            <div class="step-detail">
+                                <strong> تحديد نوع نموذج الروشتة (Roshita Type) و ارفاق صورة الروشته  </strong>
+                                <p>من خلال خانة Roshita Type يتم تحديد نوع نموذج الروشتة الخاص بالمريض سواء كان نموذجاً تابعاً للشركة (<strong dir="ltr">External Form</strong>) أو نموذجاً خارجياً (<strong dir="ltr">Company Form</strong>) لتحديد مصدر النموذج المستخدم، ثم إرفاق صورة نموذج الروشتة للمراجعة الطبية بالضغط على <strong dir="ltr">Attach - Choose File</strong> لإرسالها إلى الإدارة الطبية لمراجعتها والرد بعد الانتهاء.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-cta-box no-print">
+                    <a href="showcase.html?id=daily-2" class="watch-video-cta">
+                        <span>▶</span>
+                        <span>Click to watch video</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="showcase-frame-container">
+                <div class="browser-mockup">
+                    <div class="browser-top-bar">
+                        <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <div class="browser-url">portal.dms-eg.com/Pharmacies/ClaimInfo</div>
+                    </div>
+                    <a href="showcase.html?id=daily-2-img" class="screen-image-link">
+                        <div class="screen-image-wrapper">
+                            <img src="page4.png" alt="بيانات المطالبة والروشتة">
+                            <div class="screen-zoom-hint">Click to open full screen preview</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span class="footer-page">Page 4</span>
+            <a href="#" class="footer-link">DMS Technical &amp; Provider Support</a>
+        </div>
+    </section>
+<section class="slide">
+        <div class="slide-header">
+            <img class="company-logo" src="dms-silver-logo.png" alt="DMS Logo">
+            <div class="slide-title">DAILY - اختيار الأدوية</div>
+        </div>
+
+        <div class="slide-body showcase-body">
+            <div class="showcase-info">
+                <div>
+                    <div class="info-header">
+                        <span class="company-pill dms-pill" dir="ltr">DAILY • Step 3</span>
+                        <h3>إضافة الأصناف الدوائية</h3>
+                    </div>
+                    <div class="showcase-steps">
+                        <div class="flow-step">
+                            <div class="step-num">1</div>
+                            <div class="step-detail">
+                                <strong>البحث عن الدواء</strong>
+                                <p>من خانة <strong dir="ltr">Select a medicine</strong> اختر الدواء المطلوب.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">2</div>
+                            <div class="step-detail">
+                                <strong>البيانات التلقائية للصنف</strong>
+                                <p>تظهر تلقائياً: كود واسم الدواء، نوع الجرعة، حجم العبوة، سعر العبوة، عدد الوحدات، وسعر الوحدة.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">3</div>
+                            <div class="step-detail">
+                                <strong>حذف أي صنف</strong>
+                                <p>يمكن حذف أي دواء تم إضافته بالضغط على علامة <strong dir="ltr">(X)</strong> بجانب اسم الصنف.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">4</div>
+                            <div class="step-detail">
+                                <strong>تحديد الجرعة ومدة العلاج</strong>
+                                <p>يتم ذلك من خلال البحث عن اسم الدواء وإدخال: الجرعة (<strong dir="ltr">Dose</strong>) أي عدد مرات تناول الجرعة اليومية حسب الروشتة الطبية، ومدة الاستخدام (<strong dir="ltr">Duration</strong>) بالأيام، ومدة العلاج الكاملة (<strong dir="ltr">Total Duration</strong>) الموصوفة للمريض.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-cta-box no-print">
+                    <a href="showcase.html?id=daily-3" class="watch-video-cta">
+                        <span>▶</span>
+                        <span>Click to watch video</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="showcase-frame-container">
+                <div class="browser-mockup">
+                    <div class="browser-top-bar">
+                        <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <div class="browser-url">portal.dms-eg.com/Pharmacies/SelectMedicine</div>
+                    </div>
+                    <a href="showcase.html?id=daily-3-img" class="screen-image-link">
+                        <div class="screen-image-wrapper">
+                            <img src="page5.png" alt="إضافة الأصناف الدوائية">
+                            <div class="screen-zoom-hint">Click to open full screen preview</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span class="footer-page">Page 5</span>
+            <a href="#" class="footer-link">DMS Technical &amp; Provider Support</a>
+        </div>
+    </section>
+<section class="slide">
+        <div class="slide-header">
+            <img class="company-logo" src="dms-silver-logo.png" alt="DMS Logo">
+            <div class="slide-title">DAILY - الأصناف التي تتطلب موافقة</div>
+        </div>
+
+        <div class="slide-body showcase-body">
+            <div class="showcase-info">
+                <div>
+                    <div class="info-header">
+                        <span class="company-pill dms-pill" dir="ltr">DAILY • Approval Alert</span>
+                        <h3>التعامل مع تنبيه الموافقة الطبية</h3>
+                    </div>
+                    <div class="showcase-steps">
+                        <div class="flow-step">
+                            <div class="step-num">1</div>
+                            <div class="step-detail">
+                                <strong>تحديد الحالة كـ <span dir="ltr">Pending</span></strong>
+                                <p>عند ظهور رسالة <em dir="ltr">"This medicine requires approval"</em>، اختر <strong dir="ltr">Pending</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">2</div>
+                            <div class="step-detail">
+                                <strong>استكمال باقي الأصناف</strong>
+                                <p>استكمل إدخال باقي الأدوية ثم اضغط <strong dir="ltr">Dispense</strong> ثم <strong dir="ltr">Print</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">!</div>
+                            <div class="step-detail">
+                                <strong>ملاحظة هامة عند الطباعة</strong>
+                                <p>لن يظهر الدواء الـ <strong dir="ltr">Pending</strong> في إيصال الموافقة المطبوع لحين صدور رد الإدارة الطبية.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-cta-box no-print">
+                    <a href="showcase.html?id=daily-5" class="watch-video-cta">
+                        <span>▶</span>
+                        <span>Click to watch video</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="showcase-frame-container">
+                <div class="browser-mockup">
+                    <div class="browser-top-bar">
+                        <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <div class="browser-url">portal.dms-eg.com/Pharmacies/RequiresApproval</div>
+                    </div>
+                    <a href="showcase.html?id=daily-5-img" class="screen-image-link">
+                        <div class="screen-image-wrapper">
+                            <img src="page7.png" alt="التعامل مع تنبيه الموافقة الطبية">
+                            <div class="screen-zoom-hint">Click to open full screen preview</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span class="footer-page">Page 6</span>
+            <a href="#" class="footer-link">DMS Technical &amp; Provider Support</a>
+        </div>
+    </section>
+<section class="slide">
+        <div class="slide-header">
+            <img class="company-logo" src="dms-silver-logo.png" alt="DMS Logo">
+            <div class="slide-title">DAILY - الحفظ والطباعة</div>
+        </div>
+
+        <div class="slide-body showcase-body">
+            <div class="showcase-info">
+                <div>
+                    <div class="info-header">
+                        <span class="company-pill dms-pill" dir="ltr">DAILY • Save &amp; Print</span>
+                        <h3>إتمام عملية الصرف</h3>
+                    </div>
+                    <div class="showcase-steps">
+                        <div class="flow-step">
+                            <div class="step-num">1</div>
+                            <div class="step-detail">
+                                <strong>حفظ الأدوية (<span dir="ltr">Dispense</span>)</strong>
+                                <p>بعد مراجعة كافة الأصناف والجرعات، اضغط على زر <strong dir="ltr">Dispense</strong> لحفظ العملية.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">2</div>
+                            <div class="step-detail">
+                                <strong>طباعة الإيصال (<span dir="ltr">Print</span>)</strong>
+                                <p>لطباعة الأدوية المصروفة وإصدار الموافقة، اضغط على زر <strong dir="ltr">Print</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">✓</div>
+                            <div class="step-detail">
+                                <strong>حالة الأصناف المعلقة</strong>
+                                <p>الأدوية ذات حالة <strong dir="ltr">Pending</strong> لا تظهر في الطباعة إلا بعد اعتمادها من الإدارة الطبية.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-cta-box no-print">
+                    <a href="showcase.html?id=daily-6" class="watch-video-cta">
+                        <span>▶</span>
+                        <span>Click to watch video</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="showcase-frame-container">
+                <div class="browser-mockup">
+                    <div class="browser-top-bar">
+                        <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <div class="browser-url">portal.dms-eg.com/Pharmacies/DispensePrint</div>
+                    </div>
+                    <a href="showcase.html?id=daily-6-img" class="screen-image-link">
+                        <div class="screen-image-wrapper">
+                            <img src="page8.png" alt="إتمام عملية الصرف">
+                            <div class="screen-zoom-hint">Click to open full screen preview</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span class="footer-page">Page 7</span>
+            <a href="#" class="footer-link">DMS Technical &amp; Provider Support</a>
+        </div>
+    </section>
+<section class="slide">
+        <div class="slide-header">
+            <img class="company-logo" src="dms-silver-logo.png" alt="DMS Logo">
+            <div class="slide-title">DAILY - متابعة إشعارات الرد الطبي</div>
+        </div>
+
+        <div class="slide-body showcase-body">
+            <div class="showcase-info">
+                <div>
+                    <div class="info-header">
+                        <span class="company-pill dms-pill" dir="ltr">DAILY • Notifications</span>
+                        <h3>استلام الرد من الإدارة الطبية</h3>
+                    </div>
+                    <div class="showcase-steps">
+                        <div class="flow-step">
+                            <div class="step-num">1</div>
+                            <div class="step-detail">
+                                <strong>فتح الإشعارات</strong>
+                                <p>ستصلك إشعار في علامة الجرس 🔔، اضغط على رقم الكارنيه داخل التنبيه لمراجعة <strong dir="ltr">Medical Reply</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">✓</div>
+                            <div class="step-detail">
+                                <strong>في حالة القبول (<span dir="ltr">Accepted</span>)</strong>
+                                <p>اختر <strong dir="ltr">Yes</strong> من خانة <strong dir="ltr">Change is Dealed</strong> لإتمام صرف الدواء.</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-num">✕</div>
+                            <div class="step-detail">
+                                <strong>في حالة الرفض (<span dir="ltr">Rejected</span>)</strong>
+                                <p>أبلغ المريض بالرفض، ويمكنه الاستفسار عن السبب عبر الخط الساخن: <strong dir="ltr">0226390390</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-cta-box no-print">
+                    <a href="showcase.html?id=daily-7" class="watch-video-cta">
+                        <span>▶</span>
+                        <span>Click to watch video</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="showcase-frame-container">
+                <div class="browser-mockup">
+                    <div class="browser-top-bar">
+                        <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <div class="browser-url">portal.dms-eg.com/Pharmacies/Notifications</div>
+                    </div>
+                    <a href="showcase.html?id=daily-7-img" class="screen-image-link">
+                        <div class="screen-image-wrapper">
+                            <img src="page9.png" alt="استلام الرد من الإدارة الطبية">
+                            <div class="screen-zoom-hint">Click to open full screen preview</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span class="footer-page">Page 8</span>
+            <a href="#" class="footer-link">DMS Technical &amp; Provider Support</a>
+        </div>
+    </section>
+    <section class="slide">
+        <div class="slide-header">
+            <img class="company-logo" src="dms-silver-logo.png" alt="DMS Logo">
+            <div class="slide-title">CHRONIC - العلاج الشهري</div>
+        </div>
+
+        <div class="slide-body combined-stage-body">
+            <div class="combined-info-col">
+                <div class="info-header">
+                    <span class="company-pill dms-pill" dir="ltr">CHRONIC • Complete Flow</span>
+                    <h3>خطوات صرف العلاج الشهري المزمن</h3>
+                </div>
+                <div class="stages-stack">
+                <div class="stage-subcard">
+                    <div class="stage-subcard-top">
+                        <span class="stage-tag" dir="ltr">CHRONIC • Step 1</span>
+                        <h4>الدخول إلى قائمة الأدوية المزمنة</h4>
+                        <a href="showcase.html?id=chronic-1" class="mini-video-btn no-print">▶ Video</a>
+                    </div>
+                    <div class="stage-steps-list">
+                            <div class="flow-step compact-step">
+                                <div class="step-num">1</div>
+                                <div class="step-detail">
+                                    <strong>البحث برقم الكارنيه</strong>
+                                    <p>أدخل <strong dir="ltr">ID Number</strong> في خانة <strong dir="ltr">Search for Card</strong>.</p>
+                                </div>
+                            </div>
+                            <div class="flow-step compact-step">
+                                <div class="step-num">2</div>
+                                <div class="step-detail">
+                                    <strong>سيتم إمكانية الضغط على زر Chronic</strong>
+                                    <p>برجاء الضغط على الزر للانتقال إلى الصرف <strong dir="ltr">بشكل مباشر</strong>.</p>
+                                </div>
+                            </div>
+                            <div class="flow-step compact-step">
+                                <div class="step-num">3</div>
+                                <div class="step-detail">
+                                    <strong>إدخال كود OTP لصرف العملاء</strong>
+                                    <p>يوجد بعض العملاء تحتاج إلى كود <strong dir="ltr">OTP</strong> للصرف؛ برجاء إدخال رقم <strong dir="ltr">OTP</strong> بعد معرفته من العميل لإتمام عملية الصرف.</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="stage-subcard">
+                    <div class="stage-subcard-top">
+                        <span class="stage-tag" dir="ltr">CHRONIC • Step 2</span>
+                        <h4>اختيار الأصناف المطلوبة للصرف</h4>
+                        <a href="showcase.html?id=chronic-2" class="mini-video-btn no-print">▶ Video</a>
+                    </div>
+                    <div class="stage-steps-list">
+                            <div class="flow-step compact-step">
+                                <div class="step-num">1</div>
+                                <div class="step-detail">
+                                    <strong>صرف صنف محدد</strong>
+                                    <p>اضغط على زر <strong dir="ltr">Dispense</strong> أمام كل صنف يحتاجه المريض.</p>
+                                </div>
+                            </div>
+                            <div class="flow-step compact-step">
+                                <div class="step-num">2</div>
+                                <div class="step-detail">
+                                    <strong>صرف جميع الأصناف دفعة واحدة</strong>
+                                    <p>إذا طلب المريض جميع الأصناف المسجلة، اضغط على زر <strong dir="ltr">All</strong> لتحديدها دفعة واحدة.</p>
+                                </div>
+                            </div>
+                            <div class="flow-step compact-step">
+                                <div class="step-num">3</div>
+                                <div class="step-detail">
+                                    <strong>حفظ العملية</strong>
+                                    <p>بعد تحديد الأدوية المطلوبة، اضغط على <strong dir="ltr">Save</strong> لإتمام الصرف.</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="combined-screens-col">
+                <div class="mini-browser-frame">
+                    <div class="browser-top-bar">
+                        <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <div class="browser-url">portal.dms-eg.com/Pharmacies/ChronicPrompt</div>
+                    </div>
+                    <a href="showcase.html?id=chronic-1-img" class="screen-image-link">
+                        <div class="screen-image-wrapper">
+                            <img src="page10.png" alt="الدخول إلى قائمة الأدوية المزمنة">
+                            <div class="screen-zoom-hint">Click to open full screen preview</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="mini-browser-frame">
+                    <div class="browser-top-bar">
+                        <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <div class="browser-url">portal.dms-eg.com/Pharmacies/ChronicDispense</div>
+                    </div>
+                    <a href="showcase.html?id=chronic-2-img" class="screen-image-link">
+                        <div class="screen-image-wrapper">
+                            <img src="page11.png" alt="اختيار الأصناف المطلوبة للصرف">
+                            <div class="screen-zoom-hint">Click to open full screen preview</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span class="footer-page">Page 9</span>
+            <a href="#" class="footer-link">DMS Technical &amp; Provider Support</a>
+        </div>
+    </section>
+    <section class="slide">
+        <div class="slide-header">
+            <img class="company-logo" src="dms-silver-logo.png" alt="DMS Logo">
+            <div class="slide-title">DOCTOR - موافقات الأطباء</div>
+        </div>
+
+        <div class="slide-body combined-stage-body">
+            <div class="combined-info-col">
+                <div class="info-header">
+                    <span class="company-pill dms-pill" dir="ltr">DOCTOR • Complete Flow</span>
+                    <h3>خطوات صرف موافقات الأطباء</h3>
+                </div>
+                <div class="stages-stack">
+                <div class="stage-subcard">
+                    <div class="stage-subcard-top">
+                        <span class="stage-tag" dir="ltr">DOCTOR • Step 1</span>
+                        <h4>فتح شاشة أدوية Doctor</h4>
+                        <a href="showcase.html?id=doctor-1" class="mini-video-btn no-print">▶ Video</a>
+                    </div>
+                    <div class="stage-steps-list">
+                            <div class="flow-step compact-step">
+                                <div class="step-num">1</div>
+                                <div class="step-detail">
+                                    <strong>البحث برقم الكارنيه</strong>
+                                    <p>أدخل <strong dir="ltr">ID Number</strong> في خانة <strong dir="ltr">Search for Card</strong>.</p>
+                                </div>
+                            </div>
+                            <div class="flow-step compact-step">
+                                <div class="step-num">2</div>
+                                <div class="step-detail">
+                                    <strong>سيتم إمكانية الضغط على زر Doctor</strong>
+                                    <p>برجاء الضغط على الزر للانتقال إلى الصرف <strong dir="ltr">بشكل مباشر</strong>.</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="stage-subcard">
+                    <div class="stage-subcard-top">
+                        <span class="stage-tag" dir="ltr">DOCTOR • Step 2</span>
+                        <h4>استعراض الموافقات المتاحة</h4>
+                        <a href="showcase.html?id=doctor-2" class="mini-video-btn no-print">▶ Video</a>
+                    </div>
+                    <div class="stage-steps-list">
+                            <div class="flow-step compact-step">
+                                <div class="step-num">1</div>
+                                <div class="step-detail">
+                                    <strong>الضغط على خانة اختيار الموافقة</strong>
+                                    <p>داخل شاشة <strong dir="ltr">Doctor</strong>، اضغط على <strong dir="ltr">Click to select Approval</strong> أعلى الجدول لعرض الموافقات.</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="stage-subcard">
+                    <div class="stage-subcard-top">
+                        <span class="stage-tag" dir="ltr">DOCTOR • Step 3</span>
+                        <h4>تحديد الموافقة المطلوبة</h4>
+                        <a href="showcase.html?id=doctor-3" class="mini-video-btn no-print">▶ Video</a>
+                    </div>
+                    <div class="stage-steps-list">
+                            <div class="flow-step compact-step">
+                                <div class="step-num">1</div>
+                                <div class="step-detail">
+                                    <strong>تأكيد الاختيار</strong>
+                                    <p>من نافذة الموافقات المنبثقة، راجع رقم الموافقة والتاريخ ثم اضغط على علامة <strong dir="ltr">(✓)</strong> لتأكيدها.</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="stage-subcard">
+                    <div class="stage-subcard-top">
+                        <span class="stage-tag" dir="ltr">DOCTOR • Step 4</span>
+                        <h4>إتمام صرف موافقة الطبيب</h4>
+                        <a href="showcase.html?id=doctor-4" class="mini-video-btn no-print">▶ Video</a>
+                    </div>
+                    <div class="stage-steps-list">
+                            <div class="flow-step compact-step">
+                                <div class="step-num">1</div>
+                                <div class="step-detail">
+                                    <strong>اختيار الدواء للصرف</strong>
+                                    <p>اضغط على زر <strong dir="ltr">+Dispense</strong> بجانب الدواء المطلوب صرفه.</p>
+                                </div>
+                            </div>
+                            <div class="flow-step compact-step">
+                                <div class="step-num">2</div>
+                                <div class="step-detail">
+                                    <strong>حفظ بيانات الصرف</strong>
+                                    <p>لحفظ العملية وإصدار الإيصال، اضغط على زر <strong dir="ltr">Save</strong>.</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="combined-screens-col">
+                <div class="mini-browser-frame">
+                    <div class="browser-top-bar">
+                        <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <div class="browser-url">portal.dms-eg.com/Pharmacies/DoctorPrompt</div>
+                    </div>
+                    <a href="showcase.html?id=doctor-1-img" class="screen-image-link">
+                        <div class="screen-image-wrapper">
+                            <img src="page13.png" alt="فتح شاشة أدوية Doctor">
+                            <div class="screen-zoom-hint">Click to open full screen preview</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="mini-browser-frame">
+                    <div class="browser-top-bar">
+                        <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <div class="browser-url">portal.dms-eg.com/Pharmacies/DoctorSelect</div>
+                    </div>
+                    <a href="showcase.html?id=doctor-2-img" class="screen-image-link">
+                        <div class="screen-image-wrapper">
+                            <img src="page14.png" alt="استعراض الموافقات المتاحة">
+                            <div class="screen-zoom-hint">Click to open full screen preview</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="mini-browser-frame">
+                    <div class="browser-top-bar">
+                        <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <div class="browser-url">portal.dms-eg.com/Pharmacies/DoctorConfirm</div>
+                    </div>
+                    <a href="showcase.html?id=doctor-3-img" class="screen-image-link">
+                        <div class="screen-image-wrapper">
+                            <img src="page15.png" alt="تحديد الموافقة المطلوبة">
+                            <div class="screen-zoom-hint">Click to open full screen preview</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="mini-browser-frame">
+                    <div class="browser-top-bar">
+                        <div class="browser-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                        <div class="browser-url">portal.dms-eg.com/Pharmacies/DoctorDispense</div>
+                    </div>
+                    <a href="showcase.html?id=doctor-4-img" class="screen-image-link">
+                        <div class="screen-image-wrapper">
+                            <img src="page16.png" alt="إتمام صرف موافقة الطبيب">
+                            <div class="screen-zoom-hint">Click to open full screen preview</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-footer">
+            <span class="footer-page">Page 10</span>
+            <a href="#" class="footer-link">DMS Technical &amp; Provider Support</a>
+        </div>
+    </section>
+<section class="slide cover-slide">
+        <div>
+            <img class="cover-logo" src="dms-silver-logo.png" alt="DMS Logo">
+            <h1 class="cover-title" dir="ltr">THANK YOU</h1>
+            <p class="cover-subtitle" dir="ltr">Thanks for taking the time to explore the system.<br>We hope it brings value and ease to your work.</p>
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <span class="contact-label">الدعم الفني (Technical Support)</span>
+                    <div class="contact-phones" dir="ltr">
+                        <strong>01020700496</strong>
+                        <span class="phone-sep">•</span>
+                        <strong>01018632860</strong>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <span class="contact-label">خدمة العملاء وإدارة الصيدليات</span>
+                    <div class="contact-phones" dir="ltr">
+                        <strong>0226390390</strong>
+                    </div>
+                </div>
+
+                <div class="contact-card contact-card-wide">
+                    <span class="contact-label">البريد الإلكتروني (Email)</span>
+                    <div class="contact-email">
+                        <a href="mailto:technical.support@dms-eg.com" dir="ltr">technical.support@dms-eg.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
